@@ -42,7 +42,7 @@ class PersonneRepository extends ServiceEntityRepository
     public function findAllOrderedByName()
     {
         $queryBuilder = $this->createQueryBuilder('personne');
-        $queryBuilder->orderBy('personne.firstname', 'asc');
+        $queryBuilder->orderBy('personne.lastname', 'asc');
         $query = $queryBuilder->getQuery();
 
         return $query->getResult();

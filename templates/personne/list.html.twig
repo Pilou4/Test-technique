@@ -7,11 +7,11 @@
     <h1>Liste des personnes</h1>
     {% for personne in personnes %}
         <ul>
-            <li>{{ personne.firstname }}</li>
-            <li>{{ personne.lastname }}</li>
+            <li>prénom: {{ personne.firstname }}</li>
+            <li>nom: {{ personne.lastname }}</li>
             {% set  age  =  date ().diff( date( personne.birthday )).y %}
             {# <li>{{ personne.birthday|date('d m Y') }}</li> #}
-            <li>{{  age }} ans</li>
+            <li>age: {{  age }} ans</li>
         </ul>
     {% endfor %}
     <button><a href="{{ path('personne_add') }}">Ajouter une personne</a></button>

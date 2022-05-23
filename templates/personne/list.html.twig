@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des personnes!{% endblock %}
+
+{% block body %}
+<main class="personne">
+    <h1>Liste des personnes</h1>
+    {% for personne in personnes %}
+        <ul>
+            <li>{{ personne.firstname }}</li>
+            <li>{{ personne.lastname }}</li>
+            {% set  age  =  date ().diff( date( personne.birthday )).y %}
+            {# <li>{{ personne.birthday|date('d m Y') }}</li> #}
+            <li>{{  age }} ans</li>
+        </ul>
+    {% endfor %}
+    <button><a href="{{ path('personne_add') }}">Ajouter une personne</a></button>
+</main>
+{% endblock %}

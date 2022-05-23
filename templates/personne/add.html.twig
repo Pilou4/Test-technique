@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PersonneController!{% endblock %}
+
+{% block body %}
+<main class="add">
+    <h1>Ajouter une personne</h1>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <input type="submit" value="Valider">
+    {{ form_end(form) }}
+    <button><a href="{{ path('personne_list') }}">Voir les personnes</a></button>
+</main>
+
+{% endblock %}
